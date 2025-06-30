@@ -38,8 +38,8 @@ class EpisodesViewModel extends ChangeNotifier {
         final episodeData = {
           ...episode,
           'imagePath': episode['characters'][randomIndex]['image'],
-          'isWatched': isFavorite,
-          'isFavorite': isWatched,
+          'isWatched': isWatched,
+          'isFavorite': isFavorite,
         };
         if (isFavorite) {
           _favoriteEpisodes.add(episodeData);
