@@ -23,7 +23,6 @@ dependencies:
   hive_flutter: ^1.1.0
 
   image_picker: ^1.1.2
-  searchbar_animation: ^0.0.4
 
 dev_dependencies:
   flutter_test:

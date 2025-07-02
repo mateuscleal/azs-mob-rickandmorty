@@ -23,8 +23,19 @@ class EpisodesScreen extends StatelessWidget {
             );
           }
           return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Divider(),
+              Visibility(
+                visible: viewModel.filter.isNotEmpty,
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  child: Text(
+                    "Displaying results for: ${viewModel.filter}",
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                ),
+              ),
               Expanded(
                 child: ListView.builder(
                   itemCount: viewModel.episodes.length + 1,

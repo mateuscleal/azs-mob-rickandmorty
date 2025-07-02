@@ -22,11 +22,11 @@ class CharacterCard extends StatelessWidget {
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white70,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withValues(alpha: 0.6),
+            color: Colors.white70,
             spreadRadius: 2,
             blurRadius: 5,
             offset: Offset(0, 3),
