@@ -12,12 +12,10 @@ class EpisodeDetailsScreen extends StatelessWidget {
     return Consumer<EpisodesViewModel>(
       builder: (_, viewModel, child) {
         return Scaffold(
-          backgroundColor: Colors.white,
           appBar: AppBar(
             centerTitle: true,
             toolbarHeight: 65,
-            backgroundColor: AppColors.background,
-            foregroundColor: AppColors.primary,
+            foregroundColor: AppColors.secondary,
             title: Image.asset('assets/images/episode_details.png', width: 125),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))),
           ),
@@ -32,7 +30,9 @@ class EpisodeDetailsScreen extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
-                    boxShadow: [BoxShadow(color: Colors.grey.shade800, spreadRadius: 1, blurRadius: 7)],
+                    boxShadow: [
+                      BoxShadow(color: Colors.grey.shade800, spreadRadius: 1, blurRadius: 7, offset: Offset(0, 3)),
+                    ],
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       alignment: Alignment.topCenter,
@@ -41,7 +41,7 @@ class EpisodeDetailsScreen extends StatelessWidget {
                   ),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.black.withValues(alpha: 0.7),
+                      color: Colors.black.withValues(alpha: 0.5),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     padding: EdgeInsets.all(10),

@@ -8,16 +8,17 @@ import 'package:flutter/material.dart';
 class EpisodesViewModel extends ChangeNotifier {
   final GraphQLService _graphqlService = GraphQLService();
 
+  String _filter = '';
   int _idReference = 0;
   bool _isLoading = false;
   List<dynamic> _allEpisodes = [];
   List<dynamic> _filteredEpisodes = [];
   final List<dynamic> _favoriteEpisodes = [];
 
+
+  String get filter => _filter;
   bool get isLoading => _isLoading;
-
   int get idReference => _idReference;
-
   List<dynamic> get favoriteEpisodes => _favoriteEpisodes;
 
   List<dynamic> get episodes => _filteredEpisodes.isEmpty ? _allEpisodes : _filteredEpisodes;
@@ -57,6 +58,7 @@ class EpisodesViewModel extends ChangeNotifier {
   }
 
   Future<bool> filterEpisodes(String value) async {
+    _filter = '';
     if (value.isEmpty) {
       _filteredEpisodes.clear();
       notifyListeners();
@@ -85,6 +87,7 @@ class EpisodesViewModel extends ChangeNotifier {
       if (_filteredEpisodes.isEmpty) {
         return false;
       }
+      _filter = value;
       return true;
     } catch (_) {
       return false;
